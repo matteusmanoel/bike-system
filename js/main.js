@@ -1,0 +1,1 @@
+console.log('Sistema de Gestão de Bicicletaria iniciado');
