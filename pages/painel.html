@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Painel Principal</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🗂️ Painel Principal</h1>
+
+      <div class="painel-grid">
+        <a class="painel-card" href="cadastro.html">
+          <span>➕</span>
+          Cadastrar Produto
+        </a>
+        <a class="painel-card" href="listagem.html">
+          <span>🧾</span>
+          Listagem de Produtos
+        </a>
+        <a class="painel-card" href="carrinho.html">
+          <span>🛒</span>
+          Carrinho
+        </a>
+      </div>
+      <div class="painel-grid">
+        <a class="painel-card" href="estoque.html">
+          <span>📦</span>
+          Estoque
+        </a>
+        <a class="painel-card" href="ordem-servico.html">
+          <span>🛠️</span>
+          Ordem de Serviço
+        </a>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px">
+      <button onclick="sair()" class="btn-sair">🚪 Sair</button>
+    </div>
+  </body>
+  <script>
+    function sair() {
+      window.location.href = "login.html";
+    }
+  </script>
+</html>

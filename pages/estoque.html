@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BikeSystem - Estoque</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav>
+        <a href="painel.html">🏠 Início</a>
+        <a href="cadastro.html">➕ Cadastro</a>
+        <a href="listagem.html">🛍 Produtos</a>
+        <a href="estoque.html">📦 Estoque</a>
+        <a href="ordem-servico.html">🛠 Serviços</a>
+        <a href="carrinho.html">🧾 Carrinho</a>
+      </nav>
+    </header>
+    <div class="container">
+      <h1>📦 Controle de Estoque</h1>
+      <h3>🔍 Filtrar Vendas</h3>
+      <div class="filtros">
+        <label
+          >Data Início:
+          <input type="date" id="filtroDataInicio" />
+        </label>
+        <label
+          >Data Fim:
+          <input type="date" id="filtroDataFim" />
+        </label>
+        <label
+          >Vendedor(a):
+          <input type="text" id="filtroVendedor" placeholder="Ex: Mateus" />
+        </label>
+        <button onclick="aplicarFiltro()">Aplicar Filtro</button>
+        <button onclick="limparFiltro()">Limpar Filtro</button>
+      </div>
+
+      <table class="tabela-dados" id="tabelaEstoque">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Item</th>
+            <th>Descrição</th>
+            <th>Vendedor(a)</th>
+            <th>Forma de Pagamento</th>
+            <th>Quantidade</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="bottom-buttons">
+        <button onclick="voltar()">← Voltar</button>
+        <button onclick="exportarCSV()">📤 Exportar Relatório de Vendas</button>
+      </div>
+    </div>
+    <script src="../js/estoque.js"></script>
+  </body>
+</html>

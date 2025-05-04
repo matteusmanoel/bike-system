@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ordem de Serviço</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav>
+        <a href="painel.html">🏠 Início</a>
+        <a href="cadastro.html">➕ Cadastro</a>
+        <a href="listagem.html">🛍 Produtos</a>
+        <a href="estoque.html">📦 Estoque</a>
+        <a href="ordem-servico.html">🛠 Serviços</a>
+        <a href="carrinho.html">🧾 Carrinho</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1>🛠 Ordem de Serviço</h1>
+
+      <form id="formOS">
+        <label>Cliente:</label>
+        <input type="text" id="cliente" required />
+
+        <label>Descrição do Serviço:</label>
+        <input type="text" id="descricaoServico" required />
+
+        <label>Tipo de Serviço:</label>
+        <input
+          type="text"
+          id="tipoServico"
+          placeholder="Conserto, Troca, Revisão..."
+          required
+        />
+
+        <label>Valor (R$):</label>
+        <input type="number" id="valorServico" step="0.01" required />
+
+        <button type="submit">Cadastrar Serviço</button>
+      </form>
+
+      <h3>📋 Serviços Registrados</h3>
+      <table class="tabela-dados" id="tabelaOS">
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Descrição</th>
+            <th>Tipo</th>
+            <th>Data</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="bottom-buttons">
+        <button onclick="window.location.href='listagem.html'">
+          ← Voltar aos Produtos
+        </button>
+      </div>
+    </div>
+
+    <script src="../js/ordemServico.js"></script>
+  </body>
+</html>

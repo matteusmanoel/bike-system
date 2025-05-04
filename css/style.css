@@ -1,6 +1,373 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+}
+
+main,
+.container {
+  max-width: 960px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.produto-card {
+  position: relative;
+
+  background: rgb(206, 206, 206);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  /* ESSENCIAIS PARA PREVENIR ESTOURO */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+
+  /* LIMITA LARGURA INTERNA E CENTRALIZA */
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.produto-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.produto-card button,
+button {
+  margin: 3px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.tabela-dados {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabela-dados th,
+.tabela-dados td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.tabela-dados th {
+  background-color: #007bff;
+  color: white;
+}
+
+.tabela-dados tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* 📦 Botões inferiores empilhados e largos */
+.bottom-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 30px;
+}
+
+.bottom-buttons button {
+  width: 100%;
+  font-size: 16px;
+  padding: 14px 18px;
+  background-color: #007bff;
+}
+
+/* 🧾 Estilo do formulário de cadastro */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="password"],
+form input[type="file"] {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline-color: #007bff;
+}
+
+form button[type="submit"] {
+  font-size: 14px;
+  width: 100%;
+  align-self: flex-start;
+  padding: 16px 18px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: flex-end;
+}
+
+.filtros label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.filtros input {
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline-color: #007bff;
+}
+
+.filtros button {
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.tabela-dados tr:last-child {
+  border-top: 2px solid #007bff;
+}
+
+#totalCompra {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.total-carrinho {
+  padding: 10px;
+  background-color: #e6f0ff;
+  border: 3px solid #007bff;
+  border-radius: 12px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #004080;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 300px;
+}
+
+.input-busca {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn-remover {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 1.1rem;
+  color: red;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1;
+  transition: transform 0.1s ease-in-out;
+}
+
+.btn-remover:hover {
+  transform: scale(1.2);
+  color: darkred;
+}
+
+.produto-card {
+  position: relative;
+}
+
+.busca-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#buscaProduto {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.btn-lupa {
+  padding: 10px 15px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-lupa:hover {
+  background-color: #0056b3;
+}
+
+.mensagem-busca {
+  margin-top: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: #999;
+}
+
+.btn-editar {
+  background-color: #f0ad4e;
+  color: white;
+  border: none;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-excluir {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-finalizar {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.main-header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.main-header nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+}
+.main-header nav a:hover {
+  text-decoration: underline;
+}
+
+.painel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.painel-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.painel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f1f1f1;
+}
+
+.painel-card span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btn-sair {
+  width: 65%;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-sair:hover {
+  background-color: #c0392b;
 }

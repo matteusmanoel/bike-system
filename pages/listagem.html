@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Produtos Cadastrados</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav>
+        <a href="painel.html">🏠 Início</a>
+        <a href="cadastro.html">➕ Cadastro</a>
+        <a href="listagem.html">🛍 Produtos</a>
+        <a href="estoque.html">📦 Estoque</a>
+        <a href="ordem-servico.html">🛠 Serviços</a>
+        <a href="carrinho.html">🧾 Carrinho</a>
+      </nav>
+    </header>
+    <div class="container">
+      <h1>Lista de Produtos</h1>
+      <div class="busca-container">
+        <input
+          type="text"
+          id="buscaProduto"
+          placeholder="🔎 Buscar produto..."
+        />
+        <button onclick="aplicarFiltro()" class="btn-lupa">🔍</button>
+      </div>
+
+      <div id="produtosContainer" class="produtos-grid"></div>
+      <p id="mensagemBusca" class="mensagem-busca"></p>
+
+      <br />
+      <div class="bottom-buttons">
+        <button onclick="window.location.href='carrinho.html'">
+          🛍️ Ir para o Carrinho
+        </button>
+        <button onclick="window.location.href='cadastro.html'">
+          ➕ Cadastrar Novo Produto
+        </button>
+      </div>
+    </div>
+
+    <script src="../js/listagem.js"></script>
+  </body>
+</html>
